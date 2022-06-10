@@ -29,11 +29,10 @@ def date_paid(loan_amnt, payment, int_rate):
 #getting the date the loan would be paid off including interest
 def due_date(loan_amnt, payment, int_rate):
     int_loan = float((((int_rate/ 100) / 365) * 30) * loan_amnt* 100) + loan_amnt
-    num_payment = int(int_loan/payment)
-    years = float(num_payment/12)
+    num_payment_month = int(int_loan/payment)
+    years = float(num_payment_month/12)
     date_now = datetime.datetime.now()
-    yearto_days = years * 365
-    future_date = date_now + datetime.timedelta(days=int(yearto_days))
+    future_date = date_now + relativedelta(months=int(num_payment_month))
     return "\n" + "the approximate date your loan will be paid off is here: " + str(future_date.date())
 
 
