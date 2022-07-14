@@ -1,0 +1,2 @@
+This data analysis project is to get more information on attributes from our medical insurance dataset. 
+I analyzed the age, sex, and region to find out how those attributes affected medical charges.
